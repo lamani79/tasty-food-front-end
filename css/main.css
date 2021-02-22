@@ -22,7 +22,7 @@ titals for evry section
 .container {
     display: flex;
     width: 70%;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0 auto;
     height: 100%;
     align-items: center;
@@ -83,14 +83,18 @@ a {
 /* àààààààààààààààààààààààààààààààààààà */
 
 #nav_bar {
-    position: fixed;
     height: 70px;
     width: 100%;
+    position: fixed;
+    background-color: white;
+    transition: box-shadow 0.3s;
 }
 
-#nav_bar .container {
-    width: 80%;
-}
+
+/* #nav_bar .container {
+    height: 70px;
+    width: 100%;
+} */
 
 #nav_bar ul li {
     display: inline-block;
@@ -132,7 +136,15 @@ a {
 }
 
 .home_iteme {
-    flex: 1 1 50%;
+    flex-grow: 1;
+}
+
+.home_iteme.home_content {
+    flex-shrink: 1;
+}
+
+.home_iteme.home_image {
+    flex-shrink: 2;
 }
 
 #home_section .item_tital {
