@@ -24,7 +24,9 @@ function show_mobile_nav() {
 };
 
 
-
+// fix bug of resizing the window when mobile
+// nav is open 
+// this function hase a relation with show_mobile_nav()
 let media = matchMedia("(min-width: 730px)");
 media.addEventListener('change', reset_nav_width);
 function reset_nav_width() {
@@ -46,3 +48,20 @@ function reset_nav_width() {
     }
 
 }
+
+// adding a shadow to nav bar when scrolling 
+window.addEventListener('scroll', add_shadow_scroll);
+
+function add_shadow_scroll() {
+    scroll_position = window.scrollY;
+    if (scroll_position === 0) {
+        nav_bar.classList.remove('nav_bar_shadow')
+
+    } else {
+        nav_bar.classList.add('nav_bar_shadow');
+
+
+    }
+    console.log(scroll_position);
+};
+
