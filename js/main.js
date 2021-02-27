@@ -1,39 +1,29 @@
-// box-shadow: 0 -5px 16px black;
+let body = document.querySelector('body');
+let over_lay = document.querySelector('.over_lay');
+// mobile nav bar show:
+let nav_but = document.getElementById('nav_button');
+let nav_bar = document.getElementById('main_nav');
+let nav_but_conter = 0;
 
-let top_nav = document.querySelector("#nav_bar");
-// shadow on nav bar when scroll
-window.addEventListener('scroll', add_shadow_to_nav);
-// these function is to add box-shadow to the nav hen scroling
+nav_but.addEventListener('click', show_mobile_nav);
 
-function add_shadow_to_nav(event) {
+function show_mobile_nav() {
+    if (nav_but_conter === 0) {
+        nav_bar.style.width = '50%';
+        nav_but.style.right = 'calc(50% - 30px)';
+        over_lay.style.visibility = 'visible'
+        over_lay.style.opacity = 0.7;
 
-    let scroll_position = window.scrollY;
-    if (scroll_position > 0) {
-        top_nav.style.boxShadow = "0 -5px 16px black";
+
+        nav_but_conter = 1;
     } else {
-        top_nav.style.boxShadow = "";
+        nav_bar.style.width = '0%';
+        nav_but.style.right = '10px';
+        over_lay.style.visibility = 'hidden'
+        over_lay.style.opacity = 0;
+
+        nav_but_conter = 0;
 
     };
 
-};
-//###########################################
-let nav_button = document.getElementById("nav_button");
-let nav_bar_container = document.querySelector("#nav_bar .container");
-let nav_conter = 0;
-let nav_bar = document.getElementById('nav_bar');
-nav_button.addEventListener('click', show_mobile_nav);
-
-function show_mobile_nav() {
-    if (nav_conter == 0) {
-        nav_bar.style.height = 'auto'
-        nav_bar_container.style.visibility = 'visible';
-        nav_bar_container.style.opacity = '1';
-
-        nav_conter = 1
-    } else {
-        nav_bar.style.height = '50px'
-        nav_bar_container.style.visibility = 'hidden';
-        nav_bar_container.style.opacity = '0';
-        nav_conter = 0
-    }
-};
+}

@@ -1,0 +1,223 @@
+*, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-transform: capitalize;
+  font-size: 1rem;
+  list-style: none;
+  text-decoration: none;
+  color: #707070;
+}
+
+a, span {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+a:hover, a:active, span:hover, span:active {
+  color: #069C54;
+}
+
+.container {
+  margin: 0 5%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 40%;
+      grid-template-columns: auto 40%;
+  grid-gap: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 960px;
+}
+
+.section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100vh + 50px);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section .section_img img {
+  width: 100%;
+  height: 100%;
+}
+
+.section #big_title {
+  font-size: 4rem;
+  color: #069C54;
+}
+
+.section .section_title {
+  font-size: 2.25rem;
+  color: #393939;
+}
+
+.section .button {
+  background-color: #069C54;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.section .button a {
+  color: white;
+}
+
+.section .button:hover, .section .button:active {
+  background-color: #048654;
+}
+
+.over_lay {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  right: 0;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0.5s , opacity 0.5s;
+  transition: visibility 0.5s , opacity 0.5s;
+}
+
+#nav_button {
+  display: none;
+  -webkit-transition: right 0.5s;
+  transition: right 0.5s;
+}
+
+#main_nav {
+  z-index: 99;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+  background-color: white;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+
+#main_nav .nav_container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 15%;
+}
+
+#main_nav .nav_links {
+  width: 80%;
+}
+
+#main_nav .nav_links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_nav ul li {
+  display: inline-block;
+}
+
+#main_nav a {
+  padding: 10px;
+}
+
+@media only screen and (max-width: 730px) {
+  #home_section .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 30% auto;
+        grid-template-rows: 30% auto;
+    text-align: center;
+    margin: 0 20%;
+    grid-gap: 10px;
+  }
+  .section .section_img img {
+    width: 90%;
+  }
+  #home_section #big_title {
+    font-size: 2.5rem;
+  }
+  #home_section .section_title {
+    font-size: 1.5rem;
+  }
+  #home_section .section_sub_title {
+    font-size: 0.75rem;
+  }
+  #nav_button {
+    z-index: 99;
+    display: block;
+    top: 10px;
+    right: 10px;
+    position: fixed;
+    cursor: pointer;
+  }
+  #nav_button i {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    -webkit-transition: color .3s;
+    transition: color .3s;
+  }
+  #nav_button:hover i {
+    color: #069C54;
+  }
+  #main_nav {
+    height: 100vh;
+    width: 0%;
+    right: 0;
+  }
+  #main_nav .nav_container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #main_nav .nav_container a {
+    margin-bottom: 20px;
+  }
+  #main_nav .nav_container .nav_links ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #main_nav .nav_container .nav_links ul li {
+    margin: 5px 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

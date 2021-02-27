@@ -1,0 +1,241 @@
+@mixin reset {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin evry_section {
+    
+    .section_img{ //grid item
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .section_info{} // grid item
+    #big_title{
+        font-size: $bigest-size;
+        color: $main-green;
+    }
+    .section_title{
+        font-size: $section-title;
+        color: $title-color;
+     }
+    .button{
+        background-color: #069C54;
+        transition: background 0.3s;
+        cursor: pointer;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 20px;
+        a{
+            color: white;
+        }
+        
+        &:hover,&:active{
+            background-color: $hover-green;
+        }
+    }
+    .section_sub_title{}
+}
+
+
+// color variables
+$main-green: #069C54;
+$hover-green: #048654;
+$text-color: #707070;
+$title-color: #393939;
+
+// font setings
+$bigest-size: 4rem;
+$section-title: 2.25rem;
+$normale-size: 1rem;
+// mobile font settings
+$bigest-size_mobile: 2.5rem;
+$section-title_mobile: 1.5rem;
+$normale-size_mobile: 0.75rem;
+// main nav_bar
+$nav_bar_height: 50px;
+
+// #############################
+//         general
+*,*::after{
+    @include reset();
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    font-size: $normale-size;
+    list-style: none;
+    text-decoration: none;
+    color: $text-color;
+    
+}
+a,span{
+    transition: color 0.3s;
+    &:hover,&:active{
+        color: $main-green;
+    }
+}
+
+.container{
+    
+    margin: 0 5%;
+    display: grid;
+    grid-template-columns: auto 40%;
+    grid-gap: 1.5rem;
+    align-items: center;
+    max-width: 960px
+    
+    
+}
+.section{
+    display: flex;
+    height: calc(100vh + 50px);
+    align-items: center;
+    justify-content: center;
+    @include evry_section();
+}
+//  Main nav bar
+.over_lay{
+    background-color: black;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    right: 0;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.5s , opacity 0.5s;
+}
+#nav_button{
+    display: none;
+    transition: right 0.5s;
+}
+#main_nav{
+    z-index: 99;
+    transition: width 0.5s;
+
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    .nav_container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15%;
+    }
+    .logo{}
+    .nav_links{
+        width: 80%;
+        ul{
+            display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        }
+        }
+        ul li{
+            display: inline-block;
+        }
+        a{
+             padding: 10px;
+        }
+    }
+
+
+   
+
+
+
+
+
+// home section style:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  for tablet 
+@media only screen and (max-width: 730px) {
+    
+    #home_section .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 30% auto;
+        text-align: center;
+        margin: 0 20%;
+        grid-gap: 10px;
+
+    }
+    .section .section_img{
+        img{
+            width: 90%;
+        }
+    }
+    
+    #home_section #big_title{
+        font-size: $bigest-size_mobile;
+    }
+    #home_section .section_title{font-size: $section-title_mobile;}
+    #home_section .section_sub_title{
+        font-size: $normale-size_mobile;
+    }
+
+    // ################################
+    // nav bar
+   body{
+    //    position: relative; 
+       // to add nav bar button
+   }
+   #nav_button{
+       z-index: 99;
+       display: block;
+       top: 10px;
+       right: 10px;
+       position: fixed;
+       cursor: pointer;
+       i{
+           transform: scale(1.5);
+           transition: color .3s;
+       }     
+       &:hover i{
+           color: #069C54;
+       }   
+   }
+    
+    #main_nav{
+        height: 100vh;
+         width: 0%;
+        right: 0;
+        .nav_container{
+            flex-direction: column;
+            justify-content: center;
+
+            a{
+                margin-bottom: 20px;
+            }
+            .nav_links ul{
+                flex-direction: column;
+                justify-content: center;
+                li{
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+
+  }
+
